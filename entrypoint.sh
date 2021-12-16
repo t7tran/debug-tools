@@ -1,3 +1,7 @@
 #!/usr/bin/env sh
 
-exec "$@"
+if [[ $# -eq 1 && -f "$1" ]]; then
+	. "$1"
+else
+	exec "$@"
+fi
