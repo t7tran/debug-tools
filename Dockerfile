@@ -4,7 +4,7 @@ COPY --chown=1000:1000 entrypoint.sh /
 
 RUN addgroup -g 1000 alpine && adduser -u 1000 -s /bin/sh -D -G alpine alpine && \
     chmod u+x /entrypoint.sh && \
-    apk add --no-cache bash curl openssl mysql-client && \
+    apk add --no-cache bash curl openssl mysql-client screen && \
     apk add --no-cache perl \
                        perl-io-socket-ssl \
                        perl-digest-hmac \
