@@ -12,6 +12,7 @@ RUN addgroup -g 1000 alpine && adduser -u 1000 -s /bin/sh -D -G alpine alpine &&
                        mongodb-tools \
                        postgresql15-client \
                        pgloader \
+                       openssh-client \
                        screen \
                        7zip \
                        && \
