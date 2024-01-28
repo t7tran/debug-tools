@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM alpine:3.19
 
 COPY --chown=1000:1000 entrypoint.sh /
 
@@ -15,6 +15,7 @@ RUN addgroup -g 1000 alpine && adduser -u 1000 -s /bin/sh -D -G alpine alpine &&
                        openssh-client \
                        screen \
                        7zip \
+                       lftp \
                        && \
     apk add --no-cache perl \
                        perl-io-socket-ssl \
