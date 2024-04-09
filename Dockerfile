@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM alpine:3.19.1
 
 COPY --chown=1000:1000 entrypoint.sh /
 
@@ -13,6 +13,7 @@ RUN addgroup -g 1000 alpine && adduser -u 1000 -s /bin/sh -D -G alpine alpine &&
                        postgresql15-client \
                        pgloader \
                        openssh-client \
+                       redis \
                        screen \
                        7zip \
                        lftp \
