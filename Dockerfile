@@ -1,4 +1,4 @@
-FROM alpine:3.19.1
+FROM alpine:3.20.2
 
 COPY --chown=1000:1000 entrypoint.sh /
 
