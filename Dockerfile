@@ -28,6 +28,10 @@ RUN addgroup -g 1000 alpine && adduser -u 1000 -s /bin/sh -D -G alpine alpine &&
 #                       perl-file-libmagic \
                        && \
     curl -fsSLo /usr/local/bin/smtp-cli https://raw.githubusercontent.com/mludvig/smtp-cli/v3.10/smtp-cli && \
+# install azcopy
+    apk add --no-cache libc6-compat && \
+    curl -fsSL https://aka.ms/downloadazcopy-v10-linux | tar -C /usr/local/bin -oxvzf - --strip-components=1 --exclude '*/*.*' && \
+    chmod +x /usr/local/bin/azcopy && \
 # suppress warning of missing File::LibMagic module
     sed -i 's/missing_modules_ok = 0/missing_modules_ok = 1/' /usr/local/bin/smtp-cli && \
     chmod +x /usr/local/bin/smtp-cli && \
